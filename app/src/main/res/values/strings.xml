@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Rubics_cube</string>
+
+    <string name="title">JAK UŁOŻYĆ KOSTKĘ RUBIKA 3x3x3</string>
+    <string name="step1">Krok 1</string>
+    <string name="step2">Krok 2</string>
+    <string name="step3">Krok 3</string>
+    <string name="step4">Krok 4</string>
+    <string name="step5">Krok 5</string>
+
+    <string name="introduction_main_page">Zanim rozpoczniesz Krok 1 zapoznaj się z oznaczeniami używanymi w algorytmach układania kostek.
+        Myślę, że poniższe obrazki wyjaśnią wszystko. Zasadą w oznaczaniu ruchów jest, że patrząc na ściankę od przodu,
+        przekręcenie jej 1 raz(o 90 stopni) zgodnie z ruchem wskazówek zegara oznaczane jest pojedynczą literą oznaczającą ściankę która ma być przekręcona.
+        Czyli np. "F" oznacza przekręcenie 1 raz przedniej(frontowej) ścianki ( "F" od angielskiego "front" czyli przód) zgodnie ze wskazówkami zegara.
+        F' oznacz ruch przeciwny - czyli przekręcenie przedniej ścianki przeciwnie do ruchu wskazówek zegara.  Dokładnie ta sama zasada dotyczy wszystkich pozostałych ścianek.
+        Czyli np. ruch przeciwny do U(up-góra) to U'. Ruch przeciwny do L(left-lewy) to L' itd.</string>
+</resources>
