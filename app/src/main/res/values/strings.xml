@@ -14,4 +14,7 @@
         Czyli np. "F" oznacza przekręcenie 1 raz przedniej(frontowej) ścianki ( "F" od angielskiego "front" czyli przód) zgodnie ze wskazówkami zegara.
         F' oznacz ruch przeciwny - czyli przekręcenie przedniej ścianki przeciwnie do ruchu wskazówek zegara.  Dokładnie ta sama zasada dotyczy wszystkich pozostałych ścianek.
         Czyli np. ruch przeciwny do U(up-góra) to U'. Ruch przeciwny do L(left-lewy) to L' itd.</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
 </resources>

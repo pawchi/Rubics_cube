@@ -2,21 +2,21 @@ package org.chilon.rubics_cube;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Layout;
-import android.widget.TextView;
+import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
+import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView mainPageText;
-
+    private PublisherAdView publisherAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mainPageText = (TextView) findViewById(R.id.main_page_text);
-        //mainPageText.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
+        publisherAdView = (PublisherAdView) findViewById(R.id.publisherAdView);
+        PublisherAdRequest adRequest = new PublisherAdRequest.Builder().build();
+        publisherAdView.loadAd(adRequest);
 
 
 
