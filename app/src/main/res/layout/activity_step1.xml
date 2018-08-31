@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    android:id="@+id/constraint_layout_main_page"
+    android:id="@+id/constraint_layout_step1"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
-    tools:context=".MainActivity">
+    tools:context=".Step1">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <LinearLayout
@@ -106,10 +106,10 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/main_page_text"
+                android:id="@+id/step1_text1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/introduction_main_page"
+                android:text="@string/step1_text1"
                 android:textAlignment="viewStart"
                 android:textColor="@android:color/black"
                 android:textSize="16sp"
@@ -123,54 +123,106 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/front_move"
-                    android:layout_width="300dp"
-                    android:layout_height="300dp"
-                    android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/f_oko" />
+                <LinearLayout
+                    android:id="@+id/layout_exit_effect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/step1_exit_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/exit_situation"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/step1_effect_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/step1_effect"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/front_prim_move"
-                    android:layout_width="300dp"
-                    android:layout_height="300dp"
+                    android:id="@+id/step1_exit_effect"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/f_prim" />
+                    app:srcCompat="@drawable/step1_exit_effect" />
+
+
+                <TextView
+                    android:id="@+id/step1_text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/step1_text2"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                     />
 
                 <ImageView
-                    android:id="@+id/back_move"
-                    android:layout_width="320dp"
-                    android:layout_height="320dp"
+                    android:id="@+id/step1_alg1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/b_oko" />
+                    app:srcCompat="@drawable/step1_alg1" />
 
                 <ImageView
-                    android:id="@+id/up_move"
-                    android:layout_width="280dp"
-                    android:layout_height="280dp"
-                    android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/u_oko" />
+                    android:id="@+id/step1_alg1_moves"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:srcCompat="@drawable/step1_alg1_moves"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/step1_text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/step1_text3"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                     />
 
                 <ImageView
-                    android:id="@+id/down_move"
-                    android:layout_width="300dp"
-                    android:layout_height="300dp"
+                    android:id="@+id/step1_alg2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/d_oko" />
+                    app:srcCompat="@drawable/step1_alg2" />
 
                 <ImageView
-                    android:id="@+id/left_move"
-                    android:layout_width="300dp"
-                    android:layout_height="300dp"
-                    android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/l_oko" />
-
-                <ImageView
-                    android:id="@+id/right_move"
-                    android:layout_width="300dp"
-                    android:layout_height="300dp"
-                    android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/r_oko" />
+                    android:id="@+id/step1_alg2_moves"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:scaleType="fitCenter"
+                    android:adjustViewBounds="true"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/step1_alg2_moves"
+                    android:layout_marginBottom="90dp"/>
 
 
             </LinearLayout>
@@ -187,10 +239,19 @@
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
         ads:adUnitId="/6499/example/banner"
-        ads:layout_constraintBottom_toBottomOf="@+id/constraint_layout_main_page"
+        ads:layout_constraintBottom_toTopOf="@+id/home_step1_button"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintEnd_toEndOf="parent">
     </com.google.android.gms.ads.doubleclick.PublisherAdView>
 
+    <Button
+        android:id="@+id/home_step1_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#088da5"
+        android:text="@string/home"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

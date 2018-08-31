@@ -2,12 +2,12 @@
     <string name="app_name">Rubics_cube</string>
 
     <string name="title">JAK UŁOŻYĆ KOSTKĘ RUBIKA 3x3x3</string>
-    <string name="step1">Krok 1</string>
-    <string name="step2">Krok 2</string>
-    <string name="step3">Krok 3</string>
-    <string name="step4">Krok 4</string>
-    <string name="step5">Krok 5</string>
+    <string name="exit_situation">SYTUACJA WYJŚCIOWA</string>
 
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+
+    <string name="home">Strona główna</string>
     <string name="introduction_main_page">Zanim rozpoczniesz Krok 1 zapoznaj się z oznaczeniami używanymi w algorytmach układania kostek.
         Myślę, że poniższe obrazki wyjaśnią wszystko. Zasadą w oznaczaniu ruchów jest, że patrząc na ściankę od przodu,
         przekręcenie jej 1 raz(o 90 stopni) zgodnie z ruchem wskazówek zegara oznaczane jest pojedynczą literą oznaczającą ściankę która ma być przekręcona.
@@ -15,6 +15,44 @@
         F' oznacz ruch przeciwny - czyli przekręcenie przedniej ścianki przeciwnie do ruchu wskazówek zegara.  Dokładnie ta sama zasada dotyczy wszystkich pozostałych ścianek.
         Czyli np. ruch przeciwny do U(up-góra) to U'. Ruch przeciwny do L(left-lewy) to L' itd.</string>
 
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="step1">Krok 1</string>
+    <string name="step1_text1">Zakładam, że jeśli ktoś chce ułożyć całą kostkę to  powinien sobie poradzić beż żadnej instrukcji z ułożeniem  jednej ścianki z obwódką po bokach.
+        Gdy masz to gotowe przekręć środkową warstwę tak aby środkowe klocki bocznych ścianek znajdowały się pod obwódką z odpowiednim kolorem tworząc literę "T"  - jak na rysunku poniżej w "sytuacji wyjściowej".
+        To na prawdę nie jest trudne. Wystarczy chwilę pokombinować. Ale jeśli faktycznie sprawia ci to problem w Internecie jest bardzo duża ilość informacji na ten temat.</string>
+    <string name="step1_text2">W Kroku 1 zajmujemy się ułożeniem drugiej warstwy wg. algorytmu poniżej. Algorytm przedstawia sposób przestawienia klocka dokładnie tak jak pokazują to strzałki na obrazku poniżej.
+        W przykładzie z obrazka wstawiamy boczny klocek czerwono-biały na odpowiednie miejsce (oczywiście możesz zacząć od dowolnego klocka! Nie musi to być czerwono-biały :)).
+        W poszukiwaniu klocków do wstawienia, przekręcaj dolną warstwę (ruchem D lub D\').
+        Jeśli nie ma żadnego klocka w odpowiedniej pozycji do wstawienia, a druga warstwa nie jest kompletnie ułożona, znaczy to, że jakiś klocek znajduje się w drugiej warstwie ale w nieodpowienim położeniu.
+        W tym wypadku stosuj ten sam algorytm do "wyrzucenia" tego niewłaściwego klocka z drugiej warstwy do warstwy dolnej. Następnie zobacz czy przerzucony do dolnej warstwy klocek jest w odpowiedniej pozycji do zastosowania naszego algorytmu.
+        Operację tą powtarzaj aż do ułożenia całej drugiej warstwy. Następnie możesz przejeść do kroku 2.</string>
+    <string name="step1_text3">Powyższy algorytm \'wkładając\' klocki w prawo jest wystarczający do ułożenia całej drugiej warstwy.
+        Jeśli jednak chcesz zwiększyć szybkość układania kostki, dobrze jest znać również algorytm,którym możemy przestawiać klocki w drugą stronę(czyli w lewo) jak na ilustracji poniżej.</string>
+    <string name="step1_effect">EFEKT KROKU 1</string>
+
+
+    <string name="step2">Krok 2</string>
+    <string name="step2_effect">EFEKT KROKU 2</string>
+    <string name="step2_text1">W kroku drugim będziemy układać krzyż na górnej ściance. W pierwszej kolejności przekręć kostkę tak aby zupełnie nieułożona(dolna) ścianka znalazła się na górze -
+        jak na obrazku powyżej w \'sytuacji wyjściowej\'.  \'Sytuacja wyjściowa\' pokazuje wariant gdy żaden element krzyża nie ułożył się nam na górze.
+        W takim wypadku wykonaj poniższy algorytm jeden lub dwa razy.</string>
+    <string name="step2_text2">W efekcie powinno się otrzymać literę "L" którą należy teraz ustawić jak na obrazku poniżej i wykonać algorytm jeszcze raz uzyskując gotowy krzyż.</string>
+    <string name="step2_text3">Jeśli coś nie jest jasne, popatrz na poniższy rysunek gdzie pokazano co się dzieje na kostce po każdym wykonaniu algorytmu(przedstawiono najgorszą sytuację gdy potrzeba będzie wykonać algorytm 3 razy aby uzyskać końcowy efekt).
+        Pamiętaj aby ustawić odpowiednio kostkę gdy będziesz miał już literę "L" jak pokazano na obrazku powyżej!!</string>
+
+
+    <string name="step3">Krok 3</string>
+    <string name="step3_effect">EFEKT KROKU 3</string>
+    <string name="step3_text1">W kroku 3 dopasowujemy położenie klocków krzyża do bocznych ścianek.</string>
+    <string name="step3_text2">Poniższym algorytmem jesteśmy w stanie zamieniać dwa klocki w sąsiadujących ściankach. W zależności od sytuacji na kostce, być może będzie trzeba wykonać ten algorytm kilka razy.
+        W efekcie powinniśmy otrzymać cały krzyż  z pasującymi ściankami bocznymi.</string>
+    <string name="step3_text3">Jeśli coś nie jest jasne popatrz proszę na poniższy rysunek.
+        Przedstawia on najgorszą sytuację gdy trzeba będzie algorytm wykonać 3 razy aby wszystkie elementy krzyża znalazły się na swoich miejscach. Pamiętaj przy każdym
+        wykonywaniu algorytmu o trzymaniu kostki w odpowiedniej pozycji(jak na rysunku z \'oczkiem\' powyżej).</string>
+
+
+    <string name="step4">Krok 4</string>
+    <string name="step5">Krok 5</string>
+
 
 </resources>
