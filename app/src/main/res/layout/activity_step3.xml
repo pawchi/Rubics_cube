@@ -65,7 +65,7 @@
 
 
                 <Button
-                    android:id="@+id/step1_button"
+                    android:id="@+id/main_to_step1_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -73,7 +73,7 @@
                     android:text="@string/step1" />
 
                 <Button
-                    android:id="@+id/step2_button"
+                    android:id="@+id/main_to_step2_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -81,7 +81,7 @@
                     android:text="@string/step2" />
 
                 <Button
-                    android:id="@+id/step3_button"
+                    android:id="@+id/main_to_step3_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -89,7 +89,7 @@
                     android:text="@string/step3" />
 
                 <Button
-                    android:id="@+id/step4_button"
+                    android:id="@+id/main_to_step4_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -97,7 +97,7 @@
                     android:text="@string/step4" />
 
                 <Button
-                    android:id="@+id/step5_button"
+                    android:id="@+id/main_to_step5_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -113,41 +113,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/layout_exit_effect"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_horizontal"
-                    android:layout_marginTop="10dp">
-
-                    <TextView
-                        android:id="@+id/step2_exit_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:gravity="left"
-                        android:text="@string/exit_situation"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/step2_effect_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="30dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
-                        android:text="@string/step2_effect"
-                        android:textColor="@android:color/black"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
-
-                </LinearLayout>
-
-
                 <TextView
                     android:id="@+id/step3_text1"
                     android:layout_width="wrap_content"
@@ -159,19 +124,57 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     />
+
+                <LinearLayout
+                    android:id="@+id/layout_exit_effect"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/step3_exit_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="left"
+                        android:text="@string/exit_situation"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/step3_effect_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="30dp"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:text="@string/step3_effect"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+
+
                 <ImageView
-                    android:id="@+id/step2_exit_effect"
+                    android:id="@+id/step3_exit_effect"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/step2_exit_effect" />
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/step3_exit_effect" />
 
 
                 <TextView
-                    android:id="@+id/step2_text1"
+                    android:id="@+id/step3_text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/step2_text1"
+                    android:text="@string/step3_text2"
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
@@ -180,17 +183,17 @@
                     />
 
                 <ImageView
-                    android:id="@+id/step2_alg1_1"
+                    android:id="@+id/step3_alg1_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/step2_alg1_1" />
+                    app:srcCompat="@drawable/step3_alg1" />
 
                 <ImageView
-                    android:id="@+id/step2_alg1_moves"
+                    android:id="@+id/step3_alg1_moves"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/step2_alg1_moves"
+                    app:srcCompat="@drawable/step3_alg1_moves"
                     android:scaleType="fitCenter"
                     android:adjustViewBounds="true"
                     android:layout_marginTop="10dp"
@@ -198,10 +201,10 @@
                     android:layout_weight="1"/>
 
                 <TextView
-                    android:id="@+id/step2_text2"
+                    android:id="@+id/step3_text3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/step1_text3"
+                    android:text="@string/step3_text3"
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
@@ -210,33 +213,14 @@
                     />
 
                 <ImageView
-                    android:id="@+id/step2_alg1_2"
+                    android:id="@+id/step3_explanation"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/step1_alg2" />
-
-                <TextView
-                    android:id="@+id/step2_text3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/step2_text3"
-                    android:textAlignment="viewStart"
-                    android:textColor="@android:color/black"
-                    android:textSize="16sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    />
-
-                <ImageView
-                    android:id="@+id/step2_explanation"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:scaleType="fitCenter"
                     android:adjustViewBounds="true"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/step2_explanation"
-                    android:layout_marginBottom="110dp"/>
+                    app:srcCompat="@drawable/step3_explanation"
+                    android:layout_marginBottom="100dp"/>
+
 
 
             </LinearLayout>
@@ -253,13 +237,13 @@
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
         ads:adUnitId="/6499/example/banner"
-        ads:layout_constraintBottom_toTopOf="@+id/home_step1_button"
+        ads:layout_constraintBottom_toTopOf="@+id/step3_to_home_button"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintEnd_toEndOf="parent">
     </com.google.android.gms.ads.doubleclick.PublisherAdView>
 
     <Button
-        android:id="@+id/home_step1_button"
+        android:id="@+id/step3_to_home_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#088da5"

@@ -9,22 +9,22 @@ import android.widget.Button;
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
-public class Step2 extends AppCompatActivity {
+public class Step4 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_step2);
+        setContentView(R.layout.activity_step4);
 
         PublisherAdView publisherAdView = (PublisherAdView) findViewById(R.id.publisherAdView);
         PublisherAdRequest adRequest = new PublisherAdRequest.Builder().build();
         publisherAdView.loadAd(adRequest);
 
-        Button homeButton = (Button) findViewById(R.id.step2_to_home_button);
+        Button homeButton = (Button) findViewById(R.id.step4_to_home_button);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step2.this,MainActivity.class));
+                startActivity(new Intent(Step4.this,MainActivity.class));
             }
         });
     }

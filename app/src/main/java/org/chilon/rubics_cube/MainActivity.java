@@ -10,24 +10,18 @@ import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
 public class MainActivity extends AppCompatActivity {
 
-    private PublisherAdView publisherAdView;
-    private Button step1;
-    private Button step2;
-    private Button step3;
-    private Button step4;
-    private Button step5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        publisherAdView = (PublisherAdView) findViewById(R.id.publisherAdView);
+        PublisherAdView publisherAdView = (PublisherAdView) findViewById(R.id.publisherAdView);
         PublisherAdRequest adRequest = new PublisherAdRequest.Builder().build();
         publisherAdView.loadAd(adRequest);
 
 
-        step1 = (Button) findViewById(R.id.step1_button);
+        Button step1 = (Button) findViewById(R.id.main_to_step1_button);
         step1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,11 +29,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        step2 = (Button) findViewById(R.id.step2_button);
+        Button step2 = (Button) findViewById(R.id.main_to_step2_button);
         step2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,Step2.class));
+            }
+        });
+
+        Button step3 = (Button) findViewById(R.id.main_to_step3_button);
+        step3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Step3.class));
+            }
+        });
+
+        Button step4 = (Button) findViewById(R.id.main_to_step4_button);
+        step4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Step4.class));
+            }
+        });
+
+        Button step5 = (Button) findViewById(R.id.main_to_step5_button);
+        step5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Step5.class));
             }
         });
 

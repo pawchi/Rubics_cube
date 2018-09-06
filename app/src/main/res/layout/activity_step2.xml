@@ -65,7 +65,7 @@
 
 
                 <Button
-                    android:id="@+id/step1_button"
+                    android:id="@+id/step2_to_step1_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -73,7 +73,7 @@
                     android:text="@string/step1" />
 
                 <Button
-                    android:id="@+id/step2_button"
+                    android:id="@+id/step2_to_step2_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -81,7 +81,7 @@
                     android:text="@string/step2" />
 
                 <Button
-                    android:id="@+id/step3_button"
+                    android:id="@+id/step2_to_step3_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -89,7 +89,7 @@
                     android:text="@string/step3" />
 
                 <Button
-                    android:id="@+id/step4_button"
+                    android:id="@+id/step2_to_step4_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -97,7 +97,7 @@
                     android:text="@string/step4" />
 
                 <Button
-                    android:id="@+id/step5_button"
+                    android:id="@+id/step2_to_step5_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -152,6 +152,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
+                    android:adjustViewBounds="true"
                     app:srcCompat="@drawable/step2_exit_effect" />
 
 
@@ -189,7 +190,7 @@
                     android:id="@+id/step2_text2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/step1_text3"
+                    android:text="@string/step2_text2"
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/black"
                     android:textSize="16sp"
@@ -202,7 +203,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    app:srcCompat="@drawable/step1_alg2" />
+                    app:srcCompat="@drawable/step2_alg1_2" />
 
                 <TextView
                     android:id="@+id/step2_text3"
@@ -224,7 +225,7 @@
                     android:adjustViewBounds="true"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/step2_explanation"
-                    android:layout_marginBottom="110dp"/>
+                    android:layout_marginBottom="100dp"/>
 
 
             </LinearLayout>
@@ -241,13 +242,13 @@
         android:layout_alignParentBottom="true"
         ads:adSize="BANNER"
         ads:adUnitId="/6499/example/banner"
-        ads:layout_constraintBottom_toTopOf="@+id/home_step1_button"
+        ads:layout_constraintBottom_toTopOf="@+id/step2_to_home_button"
         ads:layout_constraintStart_toStartOf="parent"
         ads:layout_constraintEnd_toEndOf="parent">
     </com.google.android.gms.ads.doubleclick.PublisherAdView>
 
     <Button
-        android:id="@+id/home_step1_button"
+        android:id="@+id/step2_to_home_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#088da5"
