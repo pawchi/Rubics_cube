@@ -1,8 +1,12 @@
 package org.chilon.rubics_cube;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
 import android.view.View;
 import android.widget.Button;
 
@@ -25,6 +29,46 @@ public class Step1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Step1.this,MainActivity.class));
+            }
+        });
+
+        Button step1 = (Button) findViewById(R.id.step1_to_step1_button);
+        step1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Step1.this,Step1.class));
+            }
+        });
+
+        Button step2 = (Button) findViewById(R.id.step1_to_step2_button);
+        step2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Step1.this,Step2.class));
+            }
+        });
+
+        Button step3 = (Button) findViewById(R.id.step1_to_step3_button);
+        step3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Step1.this,Step3.class));
+            }
+        });
+
+        Button step4 = (Button) findViewById(R.id.step1_to_step4_button);
+        step4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Step1.this,Step4.class));
+            }
+        });
+
+        Button step5 = (Button) findViewById(R.id.step1_to_step5_button);
+        step5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Step1.this,Step5.class));
             }
         });
     }

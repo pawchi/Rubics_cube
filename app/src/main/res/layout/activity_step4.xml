@@ -95,7 +95,9 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="#088da5"
-                    android:text="@string/step4" />
+                    android:text="@string/step4"
+                    android:textStyle="bold"
+                    android:textColor="#FF021486"/>
 
                 <Button
                     android:id="@+id/main_to_step5_button"
@@ -136,27 +138,26 @@
 
                     <TextView
                         android:id="@+id/step4_exit_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="5dp"
-                        android:layout_weight="1"
-                        android:gravity="left"
                         android:text="@string/exit_situation"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
                         android:textStyle="bold" />
 
                     <TextView
                         android:id="@+id/step4_effect_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="45dp"
-                        android:layout_weight="1"
-                        android:gravity="right"
                         android:text="@string/step4_effect"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:textAlignment="center"
                         android:textColor="@android:color/black"
                         android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_marginRight="20dp"/>
 
                 </LinearLayout>
 

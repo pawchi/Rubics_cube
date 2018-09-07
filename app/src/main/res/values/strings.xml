@@ -76,7 +76,9 @@
     <string name="step5_text7">Jeśli jednak nie do końca to rozumiesz, zobacz proszę rysunek poniżej. Przedstawiono tam przykładową sytuację gdzie musimy przekręcić wszystkie cztery narożniki. Przez \'OK\' oznaczono narożniki, które się ułożyły po zastosowaniu algorytmu.
         Zauważ, że w międzyczasie kostka faktycznie wygląda na pomieszaną!!! Ale ostatecznie wszystko wraca na swoje miejsce!</string>
 
-    <string name="settings_text1"> </string>
+    <string name="settings_title">USTAWIENIA:</string>
+    <string name="settings_rate_us">Jeśli aplikacja się podoba - oceń ją.</string>
+    <string name="settings_change_language">Wybierz język.</string>
 
 
 </resources>
