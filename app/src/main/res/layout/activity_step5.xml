@@ -44,7 +44,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
-                    android:id="@+id/settings_imageview"
+                    android:id="@+id/step1_settings_imageview"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_gravity="center_horizontal|center_vertical"
@@ -305,7 +305,7 @@
     </com.google.android.gms.ads.doubleclick.PublisherAdView>
 
     <Button
-        android:id="@+id/step4_to_home_button"
+        android:id="@+id/step5_to_home_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#088da5"

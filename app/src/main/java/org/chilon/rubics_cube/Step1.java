@@ -1,14 +1,11 @@
 package org.chilon.rubics_cube;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.style.StyleSpan;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
@@ -69,6 +66,14 @@ public class Step1 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(Step1.this,Step5.class));
+            }
+        });
+
+        ImageView settingsImage = (ImageView) findViewById(R.id.step1_settings_imageview);
+        settingsImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Step1.this,Settings.class));
             }
         });
     }

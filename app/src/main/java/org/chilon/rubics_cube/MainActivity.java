@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
@@ -21,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         publisherAdView.loadAd(adRequest);
 
 
-        Button step1 = (Button) findViewById(R.id.main_to_step1_button);
+        Button step1 = (Button) findViewById(R.id.step4_to_step1_button);
         step1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -29,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button step2 = (Button) findViewById(R.id.main_to_step2_button);
+        Button step2 = (Button) findViewById(R.id.step4_to_step2_button);
         step2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button step3 = (Button) findViewById(R.id.main_to_step3_button);
+        Button step3 = (Button) findViewById(R.id.step4_to_step3_button);
         step3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -45,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button step4 = (Button) findViewById(R.id.main_to_step4_button);
+        Button step4 = (Button) findViewById(R.id.step4_to_step4_button);
         step4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,11 +55,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button step5 = (Button) findViewById(R.id.main_to_step5_button);
+        Button step5 = (Button) findViewById(R.id.step4_to_step5_button);
         step5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,Step5.class));
+            }
+        });
+
+        ImageView settingsImage = (ImageView) findViewById(R.id.step1_settings_imageview);
+        settingsImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,Settings.class));
             }
         });
 
