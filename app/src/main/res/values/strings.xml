@@ -3,6 +3,8 @@
 
     <string name="title">JAK UŁOŻYĆ KOSTKĘ RUBIKA 3x3x3</string>
     <string name="exit_situation">SYTUACJA WYJŚCIOWA</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
 
     <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
 
@@ -79,6 +81,33 @@
     <string name="settings_title">USTAWIENIA:</string>
     <string name="settings_rate_us">Oceń aplikację.</string>
     <string name="settings_change_language">Wybierz język.</string>
+    <string name="settings_test_eng">Angielski</string>
+    <string name="settings_test_pol">Polski</string>
+
+
+    <string name="language_title">WYBIERZ JĘZYK:</string>
+    <string name="arabic">Arabski</string>
+    <string name="english">Angielski</string>
+    <string name="chinese">Chiński</string>
+    <string name="french">Francuski</string>
+    <string name="german">Niemiecki</string>
+    <string name="hindi">Hindi</string>
+    <string name="japanese">Japoński</string>
+    <string name="polish">Polski</string>
+    <string name="portuguese">Portugalski</string>
+    <string name="russian">Rosyjski</string>
+    <string name="spanish">Hiszpański</string>
+
+
+
+
+
+
+
+
+
+
+
 
 
 </resources>

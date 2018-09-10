@@ -2,6 +2,7 @@ package org.chilon.rubics_cube;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,11 +12,14 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
+import java.util.Locale;
+
 public class Settings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setLanguageForApp("pl");
         setContentView(R.layout.activity_settings);
 
         LinearLayout linLay = (LinearLayout) findViewById(R.id.main_setup_lin_layout);
@@ -33,5 +37,45 @@ public class Settings extends AppCompatActivity {
                 }
             }
         });
+
+        TextView selectLanguage = (TextView) findViewById(R.id.settings_change_language);
+        selectLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Settings.this,SelectLanguage.class));
+            }
+        });
+
+        TextView selectPolish = (TextView) findViewById(R.id.settings_test_pol);
+        selectPolish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setLanguageForApp("pl");
+            }
+        });
+
+        TextView selectEnglish = (TextView) findViewById(R.id.settings_test_ang);
+        selectEnglish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setLanguageForApp("en");
+            }
+        });
+    }
+
+    private void setLanguageForApp(String languageCode){
+        Locale locale;
+
+        if(languageCode.equals("pl")){
+            locale = Locale.getDefault();
+        }
+        else {
+            locale = new Locale(languageCode);
+        }
+
+        Locale.setDefault(locale);
+        Configuration configuration = new Configuration();
+        configuration.locale = locale;
+        getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
     }
 }

@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    android:id="@+id/constraint_language"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal|center_vertical"
+    android:background="@drawable/popup_window_border"
+    tools:context=".SelectLanguage">
+
+    <LinearLayout
+        android:id="@+id/lin_lay_language_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/language_title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/language_title"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_lay_language_radios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/lin_lay_ok_cancel_language"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/constraint_language"
+        app:layout_constraintRight_toRightOf="@+id/constraint_language"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lin_lay_language_title">
+
+        <RadioGroup
+            android:id="@+id/language_radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:fadingEdge="none|vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/popup_text_id">
+
+
+            <RadioButton
+                android:id="@+id/language_rb1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbSelLanguageOnClick"
+                android:text="@string/arabic" />
+
+            <RadioButton
+                android:id="@+id/language_rb2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbSelLanguageOnClick"
+                android:text="@string/english" />
+
+            <RadioButton
+                android:id="@+id/language_rb3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbSelLanguageOnClick"
+                android:text="@string/chinese" />
+
+            <RadioButton
+                android:id="@+id/language_rb4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbSelLanguageOnClick"
+                android:text="@string/french" />
+
+            <RadioButton
+                android:id="@+id/language_rb5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbSelLanguageOnClick"
+                android:text="@string/german" />
+
+            <RadioButton
+                android:id="@+id/language_rb6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbSelLanguageOnClick"
+                android:text="@string/hindi" />
+
+            <RadioButton
+                android:id="@+id/gong_rb7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbSelLanguageOnClick"
+                android:text="@string/japanese" />
+
+            <RadioButton
+                android:id="@+id/language_rb8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbSelLanguageOnClick"
+                android:text="@string/polish" />
+
+            <RadioButton
+                android:id="@+id/language_rb9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbSelLanguageOnClick"
+                android:text="@string/portuguese" />
+
+            <RadioButton
+                android:id="@+id/language_rb10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbSelLanguageOnClick"
+                android:text="@string/russian" />
+
+            <RadioButton
+                android:id="@+id/language_rb11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbSelLanguageOnClick"
+                android:text="@string/spanish" />
+
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_lay_ok_cancel_language"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/button_language_cancel"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:background="@android:color/holo_blue_dark"
+            android:text="@string/cancel"
+            app:layout_constraintLeft_toLeftOf="@+id/constraint_language" />
+
+        <Button
+            android:id="@+id/button_language_ok"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:background="@android:color/holo_blue_dark"
+            android:text="@string/ok"
+            app:layout_constraintRight_toRightOf="@+id/constraint_language" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
