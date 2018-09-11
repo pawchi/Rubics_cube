@@ -1,11 +1,17 @@
 package org.chilon.rubics_cube;
 
+import android.app.Activity;
 import android.content.ActivityNotFoundException;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.net.Uri;
+import android.os.LocaleList;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,7 +25,8 @@ public class Settings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setLanguageForApp("pl");
+        //setLanguageForApp("pl");
+        loadLocale();
         setContentView(R.layout.activity_settings);
 
         LinearLayout linLay = (LinearLayout) findViewById(R.id.main_setup_lin_layout);
@@ -50,7 +57,7 @@ public class Settings extends AppCompatActivity {
         selectPolish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setLanguageForApp("pl");
+                setLanguageForApp("");
             }
         });
 
@@ -63,19 +70,60 @@ public class Settings extends AppCompatActivity {
         });
     }
 
-    private void setLanguageForApp(String languageCode){
-        Locale locale;
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        recreate();
+    }
 
-        if(languageCode.equals("pl")){
+    private void setLanguageForApp(String languageCode){
+        Locale locale = new Locale(languageCode);
+
+        /*
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        res.updateConfiguration(conf,dm);
+        Intent refresh = new Intent(this,Settings.class);
+        startActivity(refresh);
+        finish();
+        */
+
+
+
+        /*
+        if(languageCode.equals("")){
             locale = Locale.getDefault();
-        }
-        else {
+        } else {
             locale = new Locale(languageCode);
-        }
+        }*/
 
         Locale.setDefault(locale);
-        Configuration configuration = new Configuration();
-        configuration.locale = locale;
+        Configuration configuration = getBaseContext().getResources().getConfiguration();
+        configuration.setLocale(locale);
+        //configuration.locale = locale;
         getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+        //recreate();
+
+        //save data to shared preferences
+        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+        editor.putString("My_Lang",languageCode);
+        editor.apply();
+
+
+
+        }
+
+        /* The some as:
+        Intent refresh = getIntent();
+        finish();
+        startActivity(refresh);*/
+
+    //load language saved in shared preferences
+    public void loadLocale(){
+
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = prefs.getString("My_Lang","");
+        setLanguageForApp(language);
     }
 }

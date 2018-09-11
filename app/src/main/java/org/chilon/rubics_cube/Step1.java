@@ -1,6 +1,7 @@
 package org.chilon.rubics_cube;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -76,5 +77,11 @@ public class Step1 extends AppCompatActivity {
                 startActivity(new Intent(Step1.this,Settings.class));
             }
         });
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        recreate();
     }
 }
