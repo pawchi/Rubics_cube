@@ -24,10 +24,10 @@ public class Settings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //setLanguageForApp("pl");
         loadLocale();
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+
 
         LinearLayout linLay = (LinearLayout) findViewById(R.id.main_setup_lin_layout);
         linLay.setAlpha((float) 0.8);
@@ -57,7 +57,8 @@ public class Settings extends AppCompatActivity {
         selectPolish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setLanguageForApp("");
+                setLanguageForApp("pl_PL");
+                recreate();
             }
         });
 
@@ -66,6 +67,7 @@ public class Settings extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setLanguageForApp("en");
+                recreate();
             }
         });
     }
@@ -73,55 +75,26 @@ public class Settings extends AppCompatActivity {
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
-        recreate();
+        loadLocale();
     }
 
     private void setLanguageForApp(String languageCode){
         Locale locale = new Locale(languageCode);
-
-        /*
-        Resources res = getResources();
-        DisplayMetrics dm = res.getDisplayMetrics();
-        Configuration conf = res.getConfiguration();
-        res.updateConfiguration(conf,dm);
-        Intent refresh = new Intent(this,Settings.class);
-        startActivity(refresh);
-        finish();
-        */
-
-
-
-        /*
-        if(languageCode.equals("")){
-            locale = Locale.getDefault();
-        } else {
-            locale = new Locale(languageCode);
-        }*/
-
         Locale.setDefault(locale);
         Configuration configuration = getBaseContext().getResources().getConfiguration();
         configuration.setLocale(locale);
-        //configuration.locale = locale;
         getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
-        //recreate();
-
-        //save data to shared preferences
-        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
-        editor.putString("My_Lang",languageCode);
-        editor.apply();
-
-
-
+        saveLocale(languageCode);
         }
 
-        /* The some as:
-        Intent refresh = getIntent();
-        finish();
-        startActivity(refresh);*/
+        private void saveLocale(String languageCode){
 
+            SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+            editor.putString("My_Lang",languageCode);
+            editor.commit();
+        }
     //load language saved in shared preferences
     public void loadLocale(){
-
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
         String language = prefs.getString("My_Lang","");
         setLanguageForApp(language);
