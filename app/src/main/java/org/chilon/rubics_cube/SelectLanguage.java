@@ -1,11 +1,10 @@
 package org.chilon.rubics_cube;
 
-import android.content.Context;
-import android.content.Intent;
-import android.provider.MediaStore;
+import android.app.Activity;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.ThemedSpinnerAdapter;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +21,7 @@ public class SelectLanguage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        loadLocale();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_language);
 
@@ -34,7 +34,7 @@ public class SelectLanguage extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = dm.widthPixels;
         int height = dm.heightPixels;
-        getWindow().setLayout((int)(width*.7),(int)(height*.7));
+        getWindow().setLayout((int)(width*.7),(int)(height*.8));
 
         languageCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +46,8 @@ public class SelectLanguage extends AppCompatActivity {
         languageOkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //preparingDataToSend();
+                setLanguageForApp(radioButtonResult);
+                recreate();
                 finish();
             }
         });
@@ -58,19 +59,44 @@ public class SelectLanguage extends AppCompatActivity {
         int languageCheckRadioGroup = languageRadioGroup.getCheckedRadioButtonId();
         radioButton = (RadioButton) findViewById(languageCheckRadioGroup);
 
-        radioButtonResult = radioButton.getText().toString();
+        switch (radioButton.getId()){
+            case R.id.language_en:
+                radioButtonResult = "en";
+                break;
+
+            case R.id.language_de:
+                radioButtonResult = "de";
+                break;
+
+            case R.id.language_pl:
+                radioButtonResult = "pl_PL";
+                break;
+
+            case R.id.language_es:
+                radioButtonResult = "es";
+                break;
+        }
     }
 
-    /*
-    public void preparingDataToSend(){
-        Intent intent = new Intent();
-        intent.putExtra("language",radioButtonResult);
-        setResult(RESULT_OK,intent);
-    }
-    */
-
-    private void  updateViews(String languageCode){
-
+    private void setLanguageForApp(String languageCode){
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Configuration configuration = getBaseContext().getResources().getConfiguration();
+        configuration.setLocale(locale);
+        getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+        saveLocale(languageCode);
     }
 
+    private void saveLocale(String languageCode){
+
+        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+        editor.putString("My_Lang",languageCode);
+        editor.commit();
+    }
+    //load language saved in shared preferences
+    public void loadLocale(){
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = prefs.getString("My_Lang","");
+        setLanguageForApp(language);
+    }
 }

@@ -17,6 +17,8 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    String language;
+    SharedPreferences languagepref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void loadLocale(){
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
         String language = prefs.getString("My_Lang","");
@@ -87,17 +90,5 @@ public class MainActivity extends AppCompatActivity {
         Configuration configuration = getBaseContext().getResources().getConfiguration();
         configuration.setLocale(locale);
         getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        loadLocale();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        loadLocale();
     }
 }

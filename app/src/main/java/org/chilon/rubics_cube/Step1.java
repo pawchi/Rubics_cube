@@ -19,6 +19,7 @@ public class Step1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        loadLocale();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step1);
 
@@ -83,10 +84,7 @@ public class Step1 extends AppCompatActivity {
         });
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-
+    public void loadLocale(){
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
         String language = prefs.getString("My_Lang","");
         Locale locale = new Locale(language);
@@ -94,5 +92,17 @@ public class Step1 extends AppCompatActivity {
         Configuration configuration = getBaseContext().getResources().getConfiguration();
         configuration.setLocale(locale);
         getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadLocale();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        loadLocale();
     }
 }

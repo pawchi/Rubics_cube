@@ -17,11 +17,9 @@
         android:layout_marginTop="8dp"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
 
@@ -48,10 +46,8 @@
         android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/lin_lay_ok_cancel_language"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintLeft_toLeftOf="@+id/constraint_language"
         app:layout_constraintRight_toRightOf="@+id/constraint_language"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lin_lay_language_title">
 
         <RadioGroup
@@ -72,7 +68,7 @@
                 android:text="@string/arabic" />
 
             <RadioButton
-                android:id="@+id/language_rb2"
+                android:id="@+id/language_en"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="rbSelLanguageOnClick"
@@ -93,7 +89,7 @@
                 android:text="@string/french" />
 
             <RadioButton
-                android:id="@+id/language_rb5"
+                android:id="@+id/language_de"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="rbSelLanguageOnClick"
@@ -114,7 +110,7 @@
                 android:text="@string/japanese" />
 
             <RadioButton
-                android:id="@+id/language_rb8"
+                android:id="@+id/language_pl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="rbSelLanguageOnClick"
@@ -135,7 +131,7 @@
                 android:text="@string/russian" />
 
             <RadioButton
-                android:id="@+id/language_rb11"
+                android:id="@+id/language_es"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="rbSelLanguageOnClick"
@@ -150,12 +146,14 @@
         android:id="@+id/lin_lay_ok_cancel_language"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="12dp"
         android:gravity="center_vertical|center_horizontal"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lin_lay_language_radios">
 
         <Button
             android:id="@+id/button_language_cancel"

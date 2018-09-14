@@ -1,6 +1,9 @@
 package org.chilon.rubics_cube;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,10 +13,13 @@ import android.widget.ImageView;
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
+import java.util.Locale;
+
 public class Step5 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        loadLocale();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step5);
 
@@ -76,5 +82,27 @@ public class Step5 extends AppCompatActivity {
                 startActivity(new Intent(Step5.this,Settings.class));
             }
         });
+    }
+
+    public void loadLocale(){
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = prefs.getString("My_Lang","");
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration configuration = getBaseContext().getResources().getConfiguration();
+        configuration.setLocale(locale);
+        getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadLocale();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        loadLocale();
     }
 }
