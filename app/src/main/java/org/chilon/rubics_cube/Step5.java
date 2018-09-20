@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
@@ -17,9 +16,13 @@ import java.util.Locale;
 
 public class Step5 extends AppCompatActivity {
 
+    String startedLanguage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         loadLocale();
+        SharedPreferences prefs = getSharedPreferences("Settings",Activity.MODE_PRIVATE);
+        startedLanguage = prefs.getString("My_Lang","");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_step5);
 
@@ -97,12 +100,11 @@ public class Step5 extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        loadLocale();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        loadLocale();
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = prefs.getString("My_Lang","");
+        if(!language.equals(startedLanguage)){ //check weather language is changed
+            recreate();
+            startedLanguage = language;
+        }
     }
 }

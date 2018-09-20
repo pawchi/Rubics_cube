@@ -81,8 +81,6 @@
     <string name="settings_title">USTAWIENIA:</string>
     <string name="settings_rate_us">Oceń aplikację.</string>
     <string name="settings_change_language">Wybierz język.</string>
-    <string name="settings_test_eng">Angielski</string>
-    <string name="settings_test_pol">Polski</string>
 
 
     <string name="language_title">WYBIERZ JĘZYK:</string>

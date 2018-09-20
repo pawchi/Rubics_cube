@@ -21,17 +21,20 @@ import org.w3c.dom.Text;
 import java.util.Locale;
 
 public class Settings extends AppCompatActivity {
-    String language;
-    SharedPreferences languagepref;
+    //String language;
+    //SharedPreferences languagepref;
+    String startedLanguage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         loadLocale();
+        SharedPreferences prefs = getSharedPreferences("Settings",Activity.MODE_PRIVATE);
+        startedLanguage = prefs.getString("My_Lang","");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
-        languagepref = getSharedPreferences("language",MODE_PRIVATE);
-        language = languagepref.getString("languageToLoad",Locale.getDefault().getDisplayLanguage());
+        //languagepref = getSharedPreferences("language",MODE_PRIVATE);
+        //language = languagepref.getString("languageToLoad",Locale.getDefault().getDisplayLanguage());
 
 
         LinearLayout linLay = (LinearLayout) findViewById(R.id.main_setup_lin_layout);
@@ -58,25 +61,33 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-        TextView selectPolish = (TextView) findViewById(R.id.settings_test_pol);
-        selectPolish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setLanguageForApp("pl_PL");
-                recreate();
-            }
-        });
 
-        TextView selectEnglish = (TextView) findViewById(R.id.settings_test_ang);
-        selectEnglish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setLanguageForApp("en");
-                recreate();
-            }
-        });
     }
 
+    public void loadLocale(){
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = prefs.getString("My_Lang","");
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+        Configuration configuration = getBaseContext().getResources().getConfiguration();
+        configuration.setLocale(locale);
+        getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = prefs.getString("My_Lang","");
+        if(!language.equals(startedLanguage)){ //check weather language is changed
+            recreate();
+            startedLanguage = language;
+        }
+    }
+
+
+
+    /*
     private void setLanguageForApp(String languageCode){
         Locale locale = new Locale(languageCode);
         Locale.setDefault(locale);
@@ -108,5 +119,5 @@ public class Settings extends AppCompatActivity {
         if(!oldLanguage.equals((language))){
             recreate();
         }
-    }
+    }*/
 }

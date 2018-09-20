@@ -17,12 +17,14 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    String language;
-    SharedPreferences languagepref;
+    String startedLanguage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         loadLocale();
+        SharedPreferences prefs = getSharedPreferences("Settings",Activity.MODE_PRIVATE);
+        startedLanguage = prefs.getString("My_Lang",""); //read the language in which the activity was created
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -90,5 +92,16 @@ public class MainActivity extends AppCompatActivity {
         Configuration configuration = getBaseContext().getResources().getConfiguration();
         configuration.setLocale(locale);
         getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String language = prefs.getString("My_Lang","");
+        if(!language.equals(startedLanguage)){ //check weather language is changed
+            recreate();
+            startedLanguage = language;
+        }
     }
 }

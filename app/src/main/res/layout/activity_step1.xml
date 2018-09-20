@@ -69,10 +69,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:backgroundTint="#088da5"
+                    android:backgroundTint="#c6e2ff"
                     android:text="@string/step1"
-                    android:textStyle="bold"
-                    android:textColor="#FF021486"/>
+                    android:textColor="#FF021486" />
 
                 <Button
                     android:id="@+id/step1_to_step2_button"
