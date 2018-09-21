@@ -46,9 +46,9 @@ public class SelectLanguage extends AppCompatActivity {
         languageOkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setLanguageForApp(radioButtonResult);
-                recreate();
-                finish();
+                    setLanguageForApp(radioButtonResult);
+                    recreate();
+                    finish();
             }
         });
 
@@ -74,6 +74,18 @@ public class SelectLanguage extends AppCompatActivity {
 
             case R.id.language_es:
                 radioButtonResult = "es";
+                break;
+
+            case R.id.language_fr:
+                radioButtonResult = "fr";
+                break;
+
+            case R.id.language_pt:
+                radioButtonResult = "pt";
+                break;
+
+            case R.id.language_ru:
+                radioButtonResult = "ru";
                 break;
         }
     }

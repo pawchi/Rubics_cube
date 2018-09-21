@@ -13,8 +13,6 @@
     <string name="language_title">SELECCIONE EL IDIOMA</string>
     <string name="polish">Polaco</string>
     <string name="settings_rate_us">Aplicación de tarifas</string>
-    <string name="settings_test_eng">Inglés</string>
-    <string name="settings_test_pol">Polaco</string>
     <string name="settings_title">AJUSTES</string>
     <string name="spanish">"Español "</string>
     <string name="step1">Paso 1</string>
@@ -52,4 +50,9 @@
     <string name="step5_text6">Durante estos pasos, el cubo parece estar mezclado. No te preocupes, ¡debería ser así! Todo vuelve a sus posiciones :)))</string>
     <string name="step5_text7">Pero si esto no está completamente claro para usted, mire la siguiente imagen que muestra un ejemplo donde las cuatro esquinas deben rotar. \"OK\" marca las esquinas que ya se han organizado después de aplicar el algoritmo. Tenga en cuenta que, mientras tanto, el cubo se ve realmente confuso … ¡pero al final todo vuelve a su lugar!</string>
     <string name="title">CÓMO RESOLVER EL CUBO DE RUBIK 3x3x3</string>
+    <string name="chinese">chino</string>
+    <string name="hindi">hindi</string>
+    <string name="japanese">japonés</string>
+    <string name="portuguese">portugués</string>
+    <string name="russian">ruso</string>
 </resources>

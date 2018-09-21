@@ -33,8 +33,6 @@
     <string name="step3_effect">EFFECT OF STEP 3</string>
     <string name="step2_effect">EFFECT OF STEP 2</string>
     <string name="step1_effect">EFFECT OF STEP 1</string>
-    <string name="settings_test_eng">English</string>
-    <string name="settings_test_pol">Polish</string>
     <string name="step1_text1">I think if you want to set a whole Rubik’s cube, you should be able to complete first wall without any guidance. This is quite intuitive. When done, please turn the middle ring so that you get a \"T\" on cube (as below picture shows in initial situation).</string>
     <string name="step1_text2">In step 1, we complete second ring with using below shown algorithm. In example from the picture, you put a red-white stone in the right place (of course you can start with every stone, it does not have to be red-white). To find correct stones, please turn lower ring with D / D \' movement.
         If there is no stone in  right position to insert (and the second level is not completed), it means that a stone is somewhere in  second ring but in wrong position. In this case, use the same algorithm to \"throw\" this wrong stone out from the second ring to the lower ring.

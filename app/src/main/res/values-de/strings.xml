@@ -13,8 +13,6 @@
     <string name="settings_title">EINSTELLUNGEN</string>
     <string name="settings_rate_us">Bewerte die Applikation</string>
     <string name="settings_change_language">Sprache auswaehlen</string>
-    <string name="settings_test_eng">Englisch</string>
-    <string name="settings_test_pol">Polnisch</string>
     <string name="language_title">SPRACHE AUSWAEHLEN</string>
     <string name="arabic">Arabisch</string>
     <string name="english">Englisch</string>

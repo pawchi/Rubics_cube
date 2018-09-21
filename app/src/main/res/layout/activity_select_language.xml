@@ -60,12 +60,6 @@
             app:layout_constraintTop_toBottomOf="@+id/popup_text_id">
 
 
-            <RadioButton
-                android:id="@+id/language_rb1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="rbSelLanguageOnClick"
-                android:text="@string/arabic" />
 
             <RadioButton
                 android:id="@+id/language_en"
@@ -74,15 +68,9 @@
                 android:onClick="rbSelLanguageOnClick"
                 android:text="@string/english" />
 
-            <RadioButton
-                android:id="@+id/language_rb3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="rbSelLanguageOnClick"
-                android:text="@string/chinese" />
 
             <RadioButton
-                android:id="@+id/language_rb4"
+                android:id="@+id/language_fr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="rbSelLanguageOnClick"
@@ -96,20 +84,6 @@
                 android:text="@string/german" />
 
             <RadioButton
-                android:id="@+id/language_rb6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="rbSelLanguageOnClick"
-                android:text="@string/hindi" />
-
-            <RadioButton
-                android:id="@+id/gong_rb7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="rbSelLanguageOnClick"
-                android:text="@string/japanese" />
-
-            <RadioButton
                 android:id="@+id/language_pl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -117,14 +91,14 @@
                 android:text="@string/polish" />
 
             <RadioButton
-                android:id="@+id/language_rb9"
+                android:id="@+id/language_pt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="rbSelLanguageOnClick"
                 android:text="@string/portuguese" />
 
             <RadioButton
-                android:id="@+id/language_rb10"
+                android:id="@+id/language_ru"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:onClick="rbSelLanguageOnClick"

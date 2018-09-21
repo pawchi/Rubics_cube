@@ -39,8 +39,6 @@
     <string name="settings_title">CONFIGURAÇÕES:</string>
     <string name="settings_rate_us">Taxa de aplicação.</string>
     <string name="settings_change_language">Selecione o idioma.</string>
-    <string name="settings_test_eng">"Inglês "</string>
-    <string name="settings_test_pol">Polonês</string>
     <string name="language_title">"SELECIONE O IDIOMA: "</string>
     <string name="arabic">árabe</string>
     <string name="english">"inglês "</string>
