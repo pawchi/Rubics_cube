@@ -1,4 +1,4 @@
-package org.chilon.rubics_cube;
+package appinventor.ai_pawchism.Rubic_Cube;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +15,7 @@ import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
 import java.util.Locale;
 
-public class Step1 extends AppCompatActivity {
+public class Step4 extends AppCompatActivity {
 
     String startedLanguage;
 
@@ -25,65 +25,65 @@ public class Step1 extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("Settings",Activity.MODE_PRIVATE);
         startedLanguage = prefs.getString("My_Lang","");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_step1);
+        setContentView(R.layout.activity_step4);
 
         PublisherAdView publisherAdView = (PublisherAdView) findViewById(R.id.publisherAdView);
         PublisherAdRequest adRequest = new PublisherAdRequest.Builder().build();
         publisherAdView.loadAd(adRequest);
 
-        Button homeButton = (Button) findViewById(R.id.step1_to_home_button);
+        Button homeButton = (Button) findViewById(R.id.step4_to_home_button);
         homeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step1.this,MainActivity.class));
+                startActivity(new Intent(Step4.this,MainActivity.class));
             }
         });
 
-        Button step1 = (Button) findViewById(R.id.step1_to_step1_button);
+        Button step1 = (Button) findViewById(R.id.step4_to_step1_button);
         step1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step1.this,Step1.class));
+                startActivity(new Intent(Step4.this,Step1.class));
             }
         });
 
-        Button step2 = (Button) findViewById(R.id.step1_to_step2_button);
+        Button step2 = (Button) findViewById(R.id.step4_to_step2_button);
         step2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step1.this,Step2.class));
+                startActivity(new Intent(Step4.this,Step2.class));
             }
         });
 
-        Button step3 = (Button) findViewById(R.id.step1_to_step3_button);
+        Button step3 = (Button) findViewById(R.id.step4_to_step3_button);
         step3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step1.this,Step3.class));
+                startActivity(new Intent(Step4.this,Step3.class));
             }
         });
 
-        Button step4 = (Button) findViewById(R.id.step1_to_step4_button);
+        Button step4 = (Button) findViewById(R.id.step4_to_step4_button);
         step4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step1.this,Step4.class));
+                startActivity(new Intent(Step4.this,Step4.class));
             }
         });
 
-        Button step5 = (Button) findViewById(R.id.step1_to_step5_button);
+        Button step5 = (Button) findViewById(R.id.step4_to_step5_button);
         step5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step1.this,Step5.class));
+                startActivity(new Intent(Step4.this,Step5.class));
             }
         });
 
-        ImageView settingsImage = (ImageView) findViewById(R.id.step1_settings_imageview);
+        ImageView settingsImage = (ImageView) findViewById(R.id.step4_settings_imageview);
         settingsImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step1.this,Settings.class));
+                startActivity(new Intent(Step4.this,Settings.class));
             }
         });
     }

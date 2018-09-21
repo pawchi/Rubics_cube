@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.chilon.rubics_cube">
+    package="appinventor.ai_pawchism.Rubic_Cube">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -14,25 +14,20 @@
         android:theme="@style/AppTheme"
         >
         <activity
-            android:name=".MainActivity">
+            android:name="appinventor.ai_pawchism.Rubic_Cube.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".Step1"/>
-            <!--
-            android:configChanges="locale|orientation|keyboardHidden|screenSize"
-            -->
-
-        <activity android:name=".Step2" />
-        <activity android:name=".Step3" />
-        <activity android:name=".Step4" />
-        <activity android:name=".Step5" />
-        <activity android:name=".Settings" />
-        <activity android:name=".SelectLanguage"/>
+        <activity android:name="appinventor.ai_pawchism.Rubic_Cube.Step1"/>
+        <activity android:name="appinventor.ai_pawchism.Rubic_Cube.Step2" />
+        <activity android:name="appinventor.ai_pawchism.Rubic_Cube.Step3" />
+        <activity android:name="appinventor.ai_pawchism.Rubic_Cube.Step4" />
+        <activity android:name="appinventor.ai_pawchism.Rubic_Cube.Step5" />
+        <activity android:name="appinventor.ai_pawchism.Rubic_Cube.Settings" />
+        <activity android:name="appinventor.ai_pawchism.Rubic_Cube.SelectLanguage"/>
     </application>
 
 </manifest>

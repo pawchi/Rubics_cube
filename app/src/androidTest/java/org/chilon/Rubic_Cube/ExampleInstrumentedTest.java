@@ -1,4 +1,4 @@
-package org.chilon.rubics_cube;
+package org.chilon.Rubic_Cube;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

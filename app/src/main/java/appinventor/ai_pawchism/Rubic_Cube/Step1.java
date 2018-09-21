@@ -1,4 +1,4 @@
-package org.chilon.rubics_cube;
+package appinventor.ai_pawchism.Rubic_Cube;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,61 +15,67 @@ import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class Step1 extends AppCompatActivity {
 
     String startedLanguage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         loadLocale();
         SharedPreferences prefs = getSharedPreferences("Settings",Activity.MODE_PRIVATE);
-        startedLanguage = prefs.getString("My_Lang",""); //read the language in which the activity was created
+        startedLanguage = prefs.getString("My_Lang","");
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_step1);
 
         PublisherAdView publisherAdView = (PublisherAdView) findViewById(R.id.publisherAdView);
         PublisherAdRequest adRequest = new PublisherAdRequest.Builder().build();
         publisherAdView.loadAd(adRequest);
 
+        Button homeButton = (Button) findViewById(R.id.step1_to_home_button);
+        homeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Step1.this,MainActivity.class));
+            }
+        });
 
-        Button step1 = (Button) findViewById(R.id.step4_to_step1_button);
+        Button step1 = (Button) findViewById(R.id.step1_to_step1_button);
         step1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Step1.class));
+                startActivity(new Intent(Step1.this,Step1.class));
             }
         });
 
-        Button step2 = (Button) findViewById(R.id.step4_to_step2_button);
+        Button step2 = (Button) findViewById(R.id.step1_to_step2_button);
         step2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Step2.class));
+                startActivity(new Intent(Step1.this,Step2.class));
             }
         });
 
-        Button step3 = (Button) findViewById(R.id.step4_to_step3_button);
+        Button step3 = (Button) findViewById(R.id.step1_to_step3_button);
         step3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Step3.class));
+                startActivity(new Intent(Step1.this,Step3.class));
             }
         });
 
-        Button step4 = (Button) findViewById(R.id.step4_to_step4_button);
+        Button step4 = (Button) findViewById(R.id.step1_to_step4_button);
         step4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Step4.class));
+                startActivity(new Intent(Step1.this,Step4.class));
             }
         });
 
-        Button step5 = (Button) findViewById(R.id.step4_to_step5_button);
+        Button step5 = (Button) findViewById(R.id.step1_to_step5_button);
         step5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Step5.class));
+                startActivity(new Intent(Step1.this,Step5.class));
             }
         });
 
@@ -77,12 +83,10 @@ public class MainActivity extends AppCompatActivity {
         settingsImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Settings.class));
+                startActivity(new Intent(Step1.this,Settings.class));
             }
         });
-
     }
-
 
     public void loadLocale(){
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);

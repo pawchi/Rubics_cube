@@ -1,4 +1,4 @@
-package org.chilon.rubics_cube;
+package appinventor.ai_pawchism.Rubic_Cube;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -1,4 +1,4 @@
-package org.chilon.rubics_cube;
+package appinventor.ai_pawchism.Rubic_Cube;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,35 +15,29 @@ import com.google.android.gms.ads.doubleclick.PublisherAdView;
 
 import java.util.Locale;
 
-public class Step4 extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     String startedLanguage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         loadLocale();
         SharedPreferences prefs = getSharedPreferences("Settings",Activity.MODE_PRIVATE);
-        startedLanguage = prefs.getString("My_Lang","");
+        startedLanguage = prefs.getString("My_Lang",""); //read the language in which the activity was created
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_step4);
+        setContentView(R.layout.activity_main);
 
         PublisherAdView publisherAdView = (PublisherAdView) findViewById(R.id.publisherAdView);
         PublisherAdRequest adRequest = new PublisherAdRequest.Builder().build();
         publisherAdView.loadAd(adRequest);
 
-        Button homeButton = (Button) findViewById(R.id.step4_to_home_button);
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Step4.this,MainActivity.class));
-            }
-        });
 
         Button step1 = (Button) findViewById(R.id.step4_to_step1_button);
         step1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step4.this,Step1.class));
+                startActivity(new Intent(MainActivity.this,Step1.class));
             }
         });
 
@@ -51,7 +45,7 @@ public class Step4 extends AppCompatActivity {
         step2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step4.this,Step2.class));
+                startActivity(new Intent(MainActivity.this,Step2.class));
             }
         });
 
@@ -59,7 +53,7 @@ public class Step4 extends AppCompatActivity {
         step3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step4.this,Step3.class));
+                startActivity(new Intent(MainActivity.this,Step3.class));
             }
         });
 
@@ -67,7 +61,7 @@ public class Step4 extends AppCompatActivity {
         step4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step4.this,Step4.class));
+                startActivity(new Intent(MainActivity.this,Step4.class));
             }
         });
 
@@ -75,18 +69,20 @@ public class Step4 extends AppCompatActivity {
         step5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step4.this,Step5.class));
+                startActivity(new Intent(MainActivity.this,Step5.class));
             }
         });
 
-        ImageView settingsImage = (ImageView) findViewById(R.id.step4_settings_imageview);
+        ImageView settingsImage = (ImageView) findViewById(R.id.step1_settings_imageview);
         settingsImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Step4.this,Settings.class));
+                startActivity(new Intent(MainActivity.this,Settings.class));
             }
         });
+
     }
+
 
     public void loadLocale(){
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);

@@ -1,4 +1,4 @@
-package org.chilon.rubics_cube;
+package org.chilon.Rubic_Cube;
 
 import org.junit.Test;
 
