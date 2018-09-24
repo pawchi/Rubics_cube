@@ -11,12 +11,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import java.util.Locale;
 
 public class Settings extends AppCompatActivity {
-    //String language;
-    //SharedPreferences languagepref;
     String startedLanguage;
 
     @Override
@@ -26,10 +23,6 @@ public class Settings extends AppCompatActivity {
         startedLanguage = prefs.getString("My_Lang","");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-
-        //languagepref = getSharedPreferences("language",MODE_PRIVATE);
-        //language = languagepref.getString("languageToLoad",Locale.getDefault().getDisplayLanguage());
-
 
         LinearLayout linLay = (LinearLayout) findViewById(R.id.main_setup_lin_layout);
         linLay.setAlpha((float) 0.8);
@@ -54,8 +47,6 @@ public class Settings extends AppCompatActivity {
                 startActivity(new Intent(Settings.this,SelectLanguage.class));
             }
         });
-
-
     }
 
     public void loadLocale(){
@@ -78,40 +69,4 @@ public class Settings extends AppCompatActivity {
             startedLanguage = language;
         }
     }
-
-
-
-    /*
-    private void setLanguageForApp(String languageCode){
-        Locale locale = new Locale(languageCode);
-        Locale.setDefault(locale);
-        Configuration configuration = getBaseContext().getResources().getConfiguration();
-        configuration.setLocale(locale);
-        getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
-        saveLocale(languageCode);
-        }
-
-        private void saveLocale(String languageCode){
-
-            SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
-            editor.putString("My_Lang",languageCode);
-            editor.commit();
-        }
-    //load language saved in shared preferences
-    public void loadLocale(){
-        SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
-        String language = prefs.getString("My_Lang","");
-        setLanguageForApp(language);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        String oldLanguage = language;
-        language = languagepref.getString("languageToLoad",Locale.getDefault().getDisplayLanguage());
-        if(!oldLanguage.equals((language))){
-            recreate();
-        }
-    }*/
 }

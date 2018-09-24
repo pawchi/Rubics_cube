@@ -9,14 +9,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
-
 import java.util.Locale;
 
 public class Step3 extends AppCompatActivity {
-
     String startedLanguage;
 
     @Override

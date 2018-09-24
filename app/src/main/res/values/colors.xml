@@ -3,4 +3,17 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#021486</color>
     <color name="colorAccent">#83022e</color>
+
+    <color name="app_title_background">#FF0099CC</color>
+    <color name="button_menu_pasive">#088da5</color>
+    <color name="button_menu_active">#c6e2ff</color>
+    <color name="constraint_layout_background">#FFFFFFFF</color>
+    <color name="settings_buttons_background">#FFAAAAAA</color>
+    <color name="settings_buttons_text">#FFFFFFFF</color>
+    <color name="select_language_buttons">#FF0099CC</color>
+    <color name="primary_text">#ff000000</color>
+    <color name="settings_text">#FFFFFFFF</color>
+    <color name="button_menu_active_text">#FF021486</color>
+    <color name="attention_background">#FFAA66CC</color>
+    <color name="xxx">#FFAAAAAA</color>
 </resources>

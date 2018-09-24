@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/constraint_layout_background"
     tools:context="appinventor.ai_pawchism.Rubic_Cube.MainActivity">
 
     <ScrollView
@@ -26,7 +26,7 @@
                 android:id="@+id/layout_main_title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@android:color/holo_blue_dark"
+                android:background="@color/app_title_background"
                 android:orientation="horizontal">
 
                 <TextView
@@ -35,11 +35,11 @@
                     android:layout_height="match_parent"
                     android:layout_marginStart="10dp"
                     android:layout_weight=".80"
-                    android:background="@android:color/holo_blue_dark"
+                    android:background="@color/app_title_background"
                     android:gravity="center_vertical"
                     android:text="@string/title"
                     android:textAlignment="center"
-                    android:textColor="@android:color/black"
+                    android:textColor="@color/primary_text"
                     android:textSize="17sp"
                     android:textStyle="bold" />
 
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/introduction_main_page"
                 android:textAlignment="viewStart"
-                android:textColor="@android:color/black"
+                android:textColor="@color/primary_text"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

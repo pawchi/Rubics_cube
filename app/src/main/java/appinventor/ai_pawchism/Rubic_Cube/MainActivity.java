@@ -9,10 +9,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
-
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -82,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
 
     public void loadLocale(){
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);

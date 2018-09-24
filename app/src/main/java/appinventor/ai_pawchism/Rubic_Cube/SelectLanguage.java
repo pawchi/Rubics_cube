@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-
 import java.util.Locale;
 
 public class SelectLanguage extends AppCompatActivity {

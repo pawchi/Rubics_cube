@@ -11,11 +11,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
-
 import java.util.Locale;
 
 public class Step5 extends AppCompatActivity {
-
     String startedLanguage;
 
     @Override
