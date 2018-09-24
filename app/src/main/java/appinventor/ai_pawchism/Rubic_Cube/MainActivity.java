@@ -79,6 +79,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ForStep1 forStep1 = new ForStep1();
+        android.support.v4.app.FragmentManager manager = getSupportFragmentManager();
+        manager.beginTransaction()
+                .replace(R.id.frame_layout_fragment_one,forStep1,forStep1.getTag())
+                .commit();
+
+
     }
 
     public void loadLocale(){
