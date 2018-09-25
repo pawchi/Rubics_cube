@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    android:id="@+id/frame_layout_to_inflate"
+    android:id="@+id/layout_to_inflate_homepage"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ForStep1">
+    tools:context=".ForHomepage">
 
-    <!-- TODO: Update blank fragment layout -->
 
     <TextView
         android:id="@+id/main_page_text_fragment"
@@ -21,7 +20,7 @@
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/frame_layout_to_inflate"
+        app:layout_constraintTop_toTopOf="@+id/layout_to_inflate_homepage"
          />
 
     <LinearLayout

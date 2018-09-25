@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
 import java.util.Locale;
 
 public class SelectLanguage extends AppCompatActivity {
@@ -33,7 +34,7 @@ public class SelectLanguage extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(dm);
         int width = dm.widthPixels;
         int height = dm.heightPixels;
-        getWindow().setLayout((int)(width*.7),(int)(height*.8));
+        getWindow().setLayout((int) (width * .7), (int) (height * .8));
 
         languageCancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,20 +46,24 @@ public class SelectLanguage extends AppCompatActivity {
         languageOkButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (radioButtonResult != (null)) {
                     setLanguageForApp(radioButtonResult);
                     recreate();
                     finish();
+                } else {
+                    radioButtonResult = "";
+                    finish();
+                }
             }
         });
-
     }
 
-    public void rbSelLanguageOnClick(View view){
+    public void rbSelLanguageOnClick(View view) {
 
         int languageCheckRadioGroup = languageRadioGroup.getCheckedRadioButtonId();
         radioButton = (RadioButton) findViewById(languageCheckRadioGroup);
 
-        switch (radioButton.getId()){
+        switch (radioButton.getId()) {
             case R.id.language_en:
                 radioButtonResult = "en";
                 break;
@@ -86,28 +91,30 @@ public class SelectLanguage extends AppCompatActivity {
             case R.id.language_ru:
                 radioButtonResult = "ru";
                 break;
+
         }
     }
 
-    private void setLanguageForApp(String languageCode){
+    private void setLanguageForApp(String languageCode) {
         Locale locale = new Locale(languageCode);
         Locale.setDefault(locale);
         Configuration configuration = getBaseContext().getResources().getConfiguration();
         configuration.setLocale(locale);
-        getBaseContext().getResources().updateConfiguration(configuration,getBaseContext().getResources().getDisplayMetrics());
+        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
         saveLocale(languageCode);
     }
 
-    private void saveLocale(String languageCode){
+    private void saveLocale(String languageCode) {
 
-        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
-        editor.putString("My_Lang",languageCode);
+        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
+        editor.putString("My_Lang", languageCode);
         editor.commit();
     }
+
     //load language saved in shared preferences
-    public void loadLocale(){
+    public void loadLocale() {
         SharedPreferences prefs = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
-        String language = prefs.getString("My_Lang","");
+        String language = prefs.getString("My_Lang", "");
         setLanguageForApp(language);
     }
 }
