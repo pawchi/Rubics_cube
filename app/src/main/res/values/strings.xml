@@ -1,4 +1,5 @@
 <resources>
+    <string name="baner_ID" translatable="false">ca-app-pub-9832953507407797/5858035763</string>
     <string name="app_name">Rubics_cube</string>
 
     <string name="title">JAK UŁOŻYĆ KOSTKĘ RUBIKA 3x3x3</string>
